@@ -1,0 +1,62 @@
+import React, { useEffect, useState } from 'react'
+import { blog_data } from '../../assets/assets';
+// import Blog from '../Blog';
+import BlogTableItem from '../../components/Admin/BlogTableItem';
+import { useAppContext } from '../../context/AppContext';
+
+const ListBlog = () => {
+
+   const [blogs,setBlogs] =useState([]);
+   const {axios} = useAppContext()
+
+   const fetchBlogs = async () =>{
+    try {
+           const {data} = await axios.get('/api/admin/blogs')
+           if(data.success){
+              setBlogs(data.blogs)
+           }else{
+            toast.error(data.message)
+           }
+
+    } catch (error) {                   
+            toast.error(error.message)      
+    }
+   }
+
+   useEffect(()=>{
+     fetchBlogs()
+   },[])
+
+  return (
+        <div className='min-h-screen w-full bg-blue-50 p-4 md:p-10'>
+
+    <div className='flex-1 pt-5 px-5 sm:pt-12 sm:pl-16 bg-blue-50/50'>
+    <h1>All Blogs</h1>
+
+      <div className='relative  h-[calc(100vh-8cm)] mt-4 max-w-5xl overflow-x-auto shadow rounded-lg scrollbar-hide bg-white'>
+              <table className='w-full text-sm text-gray-500'>
+                <thead className='text-xs text-gray-600 text-left uppercaste'>
+                     <tr>
+                         <th scope='col' className='px-2 py-4 xl:px-6'>#</th>
+                         <th scope='col' className='px-2 py-4'>BLOG TITLE</th>
+                         <th scope='col' className='px-2 py-4 max-sm:hidden'>DATE</th>
+                         <th scope='col' className='px-2 py-4 max-sm:hidden'>STATUS</th>
+                         <th scope='col' className='px-2 py-4'>ACTIONS</th>
+                    
+                     </tr>
+                </thead>
+                <tbody>
+                    {blogs.map((Blog , index)=>{
+                      return <BlogTableItem key={Blog._id} blog={Blog}
+                      fetchBlogs={fetchBlogs} index={index + 1}/>
+                    })}
+                </tbody>
+              </table>
+            </div>
+      
+    </div>
+    </div>
+  )
+}
+
+export default ListBlog
