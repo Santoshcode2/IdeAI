@@ -24,7 +24,4 @@
 - **AI Engine**: Google Gemini API
 - **Image Handling**: ImageKit
 
----
-
-## 📁 Folder Structure
 
