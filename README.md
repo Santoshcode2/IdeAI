@@ -1,7 +1,8 @@
 # 🚀 QuickBlog – AI-Powered Blogging Platform
 
-**QuickBlog** is a full-stack blogging platform powered by **Google Gemini**, where users can read, comment, and subscribe to blogs. Admins can generate blog content using AI, upload images, and manage posts securely through a modern and responsive interface.
+**QuickBlog** is a full-stack blogging platform powered by **Google Gemini**, where users can read, comment, and subscribe to blogs. Admins can generate blog content using AI, upload images, and manage posts securely through a modern and responsive interface.  
 QuickBlog project Link --> https://quick-blog-five-pied.vercel.app
+
 
 ---
 
