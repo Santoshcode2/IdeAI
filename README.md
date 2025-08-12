@@ -13,7 +13,6 @@ QuickBlog project Link --> https://quick-blog-five-pied.vercel.app
 - 🖼️ **Image Upload & Optimization** via ImageKit
 - 📚 **Dynamic Blog Rendering** for all users
 - 💬 **Comment System** under each blog post
-- 📩 **Email Subscription** support
 - 📊 **User & Content Data Storage** in MongoDB for future optimization
 
 ---
@@ -21,7 +20,7 @@ QuickBlog project Link --> https://quick-blog-five-pied.vercel.app
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js
-- **Backend**: Node.js, Express.js
+- **Backend**:  Express.js
 - **Database**: MongoDB
 - **AI Engine**: Google Gemini API
 - **Image Handling**: ImageKit
